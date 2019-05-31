@@ -11,6 +11,7 @@ class ListConverter(BaseConverter):
 
     def __init__(self, url_map, separator='+'):
         super(ListConverter, self).__init__(url_map)
+        # Python 3, urllib.parse.unquote(separator)
         self.separator = urllib.unquote(separator)
 
     def to_python(self, value):
