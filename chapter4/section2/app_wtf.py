@@ -1,7 +1,6 @@
 # coding=utf-8
 from flask import Flask, render_template, request
-from flask_wtf import Form
-from flask_wtf.csrf import CsrfProtect
+from flask_wtf import FlaskForm
 from wtforms import TextField, PasswordField
 from wtforms.validators import length, Required, EqualTo
 
@@ -10,7 +9,6 @@ from users import User
 
 app = Flask(__name__, template_folder='../../templates')
 app.config.from_object('config')
-CsrfProtect(app)
 db.init_app(app)
 
 
